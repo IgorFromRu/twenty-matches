@@ -2,6 +2,11 @@ package logic;
 
 public class ComputerLogic {
 
+    /**
+     * Расчет логики компьютера. Оставляет сопернику только 17, 13, 9, 5 и 1 спичку
+     * @param matches Количество спичек
+     * @return Возвращает число спичек, которое берет компьютер
+     */
     public int move(int matches) {
         int moveReturn = 0;
         if (matches == 20) {

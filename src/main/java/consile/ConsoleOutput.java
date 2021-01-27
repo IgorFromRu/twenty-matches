@@ -2,7 +2,6 @@ package consile;
 
 public class ConsoleOutput {
 
-
     public void outMatches(int matches) {
         System.out.println("На столе осталось " + matches + " спичек.");
     }

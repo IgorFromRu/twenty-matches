@@ -5,19 +5,22 @@ import consile.ConsoleOutput;
 import java.util.Scanner;
 
 public class GameLogic {
-    ComputerLogic computer;
-    ConsoleOutput console;
-    int matches;
-    Scanner in;
+    private ComputerLogic computer;
+    private ConsoleOutput console;
+    private int matches;
+    private Scanner in;
 
+    /**
+     * Запускает игру
+     */
     public void start() {
         matches = 20;
         computer = new ComputerLogic();
         console = new ConsoleOutput();
 
-        for (int count = 1; count < 20; count++) {
+        for (int countMove = 1; countMove < 20; countMove++) {
             console.outMatches(matches);
-            if (count % 2 != 0) {
+            if (countMove % 2 != 0) {
                 int numberComp = computer.move(matches);
                 matches -= numberComp;
                 console.outMove("компьютер", numberComp);
@@ -33,6 +36,10 @@ public class GameLogic {
         }
     }
 
+    /**
+     * Проверяет введенное число игрока в консоли от 1 до 3
+     * @return возвращает число введенное игроком
+     */
     private int checkMove() {
         in = new Scanner(System.in);
         int numberPlayer = 0;
@@ -48,6 +55,12 @@ public class GameLogic {
         return numberPlayer;
     }
 
+    /**
+     * Проверяет число оставшихся спичек и если спичка остается одна, объявляет проигравшего
+     * (игрока т.к в игру не возможно выиграть) и выходит из программы
+     * @param name Имя соперника
+     * @param matches Количество спичек
+     */
     private void checkGameOver(String name, int matches) {
         if (matches == 1) {
             console.outGameOver(name);
