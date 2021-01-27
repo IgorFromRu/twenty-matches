@@ -1,4 +1,4 @@
-package consile;
+package console;
 
 public class ConsoleOutput {
 
@@ -19,6 +19,7 @@ public class ConsoleOutput {
     }
 
     public void outGameOver(String name) {
-        System.out.printf("Для " + name + "а осталась последняя спичка. " + name.toUpperCase().charAt(0) + name.substring(1) + " проиграл.");
+        System.out.printf("Для " + name + "а осталась последняя спичка. " + name.toUpperCase().charAt(0)
+                + name.substring(1) + " проиграл.");
     }
 }

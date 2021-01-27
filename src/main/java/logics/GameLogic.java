@@ -1,6 +1,6 @@
-package logic;
+package logics;
 
-import consile.ConsoleOutput;
+import console.ConsoleOutput;
 
 import java.util.Scanner;
 
